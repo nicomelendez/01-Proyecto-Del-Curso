@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import java.awt.Canvas;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 
 public class Form_Persona {
 
@@ -172,103 +173,6 @@ public class Form_Persona {
 		lblNewLabel_1.setBounds(269, 328, 45, 13);
 		
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(331, 115, 709, 288);
-		frmGestinDePersonal.getContentPane().add(panel);
-		panel.setLayout(null);
-		
-		table = new JTable();
-		table.setBounds(0, 30, 709, 258);
-		table.setCellSelectionEnabled(true);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null, null},
-			},
-			new String[] {
-				"ID", "Nombre", "Apellido", "Departamento", "Hijos", "Fecha Nacimiento"
-			}
-		) {
-			Class[] columnTypes = new Class[] {
-				String.class, String.class, String.class, String.class, String.class, String.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		panel.add(table);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(125, 132, 72));
-		panel_3.setBounds(20, 0, 77, 30);
-		panel.add(panel_3);
-		panel_3.setLayout(null);
-		
-		JLabel lblNewLabel_4 = new JLabel("ID");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4.setBounds(30, 10, 21, 13);
-		panel_3.add(lblNewLabel_4);
-		
-		JPanel panel_3_1 = new JPanel();
-		panel_3_1.setBackground(new Color(125, 132, 72));
-		panel_3_1.setBounds(129, 0, 77, 30);
-		panel_3_1.setLayout(null);
-		panel.add(panel_3_1);
-		
-		JLabel lblNewLabel_4_1 = new JLabel("Nombre");
-		lblNewLabel_4_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4_1.setBounds(10, 10, 57, 13);
-		panel_3_1.add(lblNewLabel_4_1);
-		
-		JPanel panel_3_2 = new JPanel();
-		panel_3_2.setBackground(new Color(125, 132, 72));
-		panel_3_2.setBounds(258, 0, 77, 30);
-		panel_3_2.setLayout(null);
-		panel.add(panel_3_2);
-		
-		JLabel lblNewLabel_4_2 = new JLabel("Apellido");
-		lblNewLabel_4_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4_2.setBounds(10, 10, 57, 13);
-		panel_3_2.add(lblNewLabel_4_2);
-		
-		JPanel panel_3_3 = new JPanel();
-		panel_3_3.setBackground(new Color(125, 132, 72));
-		panel_3_3.setBounds(360, 0, 101, 30);
-		panel_3_3.setLayout(null);
-		panel.add(panel_3_3);
-		
-		JLabel lblNewLabel_4_3 = new JLabel("Departamento");
-		lblNewLabel_4_3.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4_3.setBounds(10, 10, 108, 13);
-		panel_3_3.add(lblNewLabel_4_3);
-		
-		JPanel panel_3_4 = new JPanel();
-		panel_3_4.setBackground(new Color(125, 132, 72));
-		panel_3_4.setBounds(471, 0, 89, 30);
-		panel_3_4.setLayout(null);
-		panel.add(panel_3_4);
-		
-		JLabel lblNewLabel_4_4 = new JLabel("Hijos");
-		lblNewLabel_4_4.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4_4.setBounds(22, 10, 38, 13);
-		panel_3_4.add(lblNewLabel_4_4);
-		
-		JPanel panel_3_5 = new JPanel();
-		panel_3_5.setBackground(new Color(125, 132, 72));
-		panel_3_5.setBounds(570, 0, 139, 30);
-		panel_3_5.setLayout(null);
-		panel.add(panel_3_5);
-		
-		JLabel lblNewLabel_4_5 = new JLabel("Fecha de nacimiento");
-		lblNewLabel_4_5.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_4_5.setBounds(10, 10, 130, 13);
-		panel_3_5.add(lblNewLabel_4_5);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(125, 132, 72));
-		panel_4.setBounds(0, 0, 709, 30);
-		panel.add(panel_4);
-		
-		
 		
 		frmGestinDePersonal.getContentPane().add(lblNewLabel_1);
 		JButton btnGuardarPersona = new JButton("Guardar");
@@ -313,7 +217,7 @@ public class Form_Persona {
 			}
 		});
 		btnGuardarPersona.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnGuardarPersona.setBounds(206, 382, 86, 21);
+		btnGuardarPersona.setBounds(225, 382, 86, 21);
 		frmGestinDePersonal.getContentPane().add(btnGuardarPersona);
 		
 		JPanel panel_1 = new JPanel();
@@ -391,6 +295,30 @@ public class Form_Persona {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.setBounds(870, 85, 121, 21);
 		frmGestinDePersonal.getContentPane().add(btnNewButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(350, 127, 674, 276);
+		frmGestinDePersonal.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.BOLD, 13));
+		scrollPane.setViewportView(table);
+		table.setCellSelectionEnabled(true);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null},
+			},
+			new String[] {
+				"ID", "Nombre", "Apellido", "Departamento", "Hijos", "Fecha Nacimiento"
+			}
+		) {
+			Class[] columnTypes = new Class[] {
+				String.class, String.class, String.class, String.class, String.class, String.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
 		
 		
 		
